@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Text, StyleSheet, Image, TextInput, ScrollView} from 'react-native';
 export default function Greeting() {
   return (
-    <View>
+    <ScrollView>
       <View style={headingStyles. container}>
         <View>
           <Text style={headingStyles.headingText}>Hello , Devs</Text>
@@ -10,28 +10,48 @@ export default function Greeting() {
         </View>
           <Image source={require('../assets/profile1.png')} style={headingStyles.profile} />
       </View>
-      <TextInput
-        style={headingStyles.searchBar}
-          placeholder='Search'
-          placeholderTextColor='black'>
-          </TextInput>
+      <View style={headingStyles.filterContainer}>
+        <View style={headingStyles.searchContainer}>
+        <Image source={require('../assets/search.png')} style={headingStyles.searchIcon} />
+        <TextInput
+          style={headingStyles.searchBar}
+            placeholder='Search'
+            placeholderTextColor='black'>
+        </TextInput>
+        </View>
+        <Image source={require('../assets/Filter.png')} style={headingStyles.filterIcon} />
+      </View>
 
-          <Text>Categories</Text>
-          <ScrollView horizontal={true}>
-            <View>
-              <Text>Exercise</Text>
-              <Text>12 Tasks</Text>
-              <Image/>
-            </View>
-          </ScrollView>
+      <Text>Categories</Text>
+      <ScrollView horizontal={true}>
+        <View style={headingStyles.categoriesContainer}>
+          <Text>Exercise</Text>
+          <Text>12 Tasks</Text>
+          <Image style={headingStyles.catImage1} source={require('../assets/young-woman.png')}/>
+        </View>
+        <View style={headingStyles.categoriesContainer}>
+          <Text>Exercise</Text>
+          <Text>12 Tasks</Text>
+          <Image style={headingStyles.catImage2} source={require('../assets/young-woman-2.png')}/>
+        </View>
+      </ScrollView>
 
-          <Text>Ongoing Task</Text>
-          <ScrollView>
-            <View>
-              <Text>Mobile App Development</Text>
-            </View>
-          </ScrollView>
-    </View>
+      <Text>Ongoing Task</Text>
+      <ScrollView>
+        <View style={headingStyles.taskContainer}>
+          <Text>Mobile App Development</Text>
+        </View>
+        <View style={headingStyles.taskContainer}>
+          <Text>Web Development</Text>
+        </View>
+        <View style={headingStyles.taskContainer}>
+          <Text>Cooking Sessions</Text>
+        </View>
+        <View style={headingStyles.taskContainer}>
+          <Text>Praying Sessions</Text>
+        </View>
+      </ScrollView>
+    </ScrollView>
   )
 };
 
