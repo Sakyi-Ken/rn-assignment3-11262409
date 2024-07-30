@@ -2,8 +2,8 @@ import React from 'react';
 import {View, Text, StyleSheet, Image, TextInput, ScrollView} from 'react-native';
 export default function Greeting() {
   return (
-    <ScrollView>
-      <View style={headingStyles. container}>
+    <ScrollView style={headingStyles.container}>
+      <View style={headingStyles. header}>
         <View>
           <Text style={headingStyles.headingText}>Hello , Devs</Text>
           <Text>14 tasks today</Text>
@@ -22,33 +22,52 @@ export default function Greeting() {
         <Image source={require('../assets/Filter.png')} style={headingStyles.filterIcon} />
       </View>
 
-      <Text>Categories</Text>
-      <ScrollView horizontal={true}>
+      <Text style={{fontSize: 25, marginBottom: 15}}>Categories</Text>
+      <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
         <View style={headingStyles.categoriesContainer}>
-          <Text>Exercise</Text>
-          <Text>12 Tasks</Text>
+        
+          <Text style={headingStyles.categoryHeader}>Study</Text>
+          <Text style={headingStyles.categoryText}>12 Tasks</Text>
           <Image style={headingStyles.catImage1} source={require('../assets/young-woman.png')}/>
         </View>
         <View style={headingStyles.categoriesContainer}>
-          <Text>Exercise</Text>
-          <Text>12 Tasks</Text>
+          <Text style={headingStyles.categoryHeader}>Exercise</Text>
+          <Text style={headingStyles.categoryText}>12 Tasks</Text>
           <Image style={headingStyles.catImage2} source={require('../assets/young-woman-2.png')}/>
         </View>
       </ScrollView>
 
-      <Text>Ongoing Task</Text>
+      <Text style={{fontSize: 25, marginBottom: 10, marginTop: 30}}>Ongoing Task</Text>
       <ScrollView>
         <View style={headingStyles.taskContainer}>
-          <Text>Mobile App Development</Text>
+          <Text style={headingStyles.taskText}>Mobile App Development</Text>
         </View>
         <View style={headingStyles.taskContainer}>
-          <Text>Web Development</Text>
+          <Text style={headingStyles.taskText}>Web Development</Text>
         </View>
         <View style={headingStyles.taskContainer}>
-          <Text>Cooking Sessions</Text>
+          <Text style={headingStyles.taskText}>Cooking Sessions</Text>
         </View>
         <View style={headingStyles.taskContainer}>
-          <Text>Praying Sessions</Text>
+          <Text style={headingStyles.taskText}>Praying Sessions</Text>
+        </View>
+        <View style={headingStyles.taskContainer}>
+          <Text style={headingStyles.taskText}>Working out </Text>
+        </View>
+        <View style={headingStyles.taskContainer}>
+          <Text style={headingStyles.taskText}>Washing</Text>
+        </View>
+        <View style={headingStyles.taskContainer}>
+          <Text style={headingStyles.taskText}>Tutoring Sessions</Text>
+        </View>
+        <View style={headingStyles.taskContainer}>
+          <Text style={headingStyles.taskText}>Studying Sessions</Text>
+        </View>
+        <View style={headingStyles.taskContainer}>
+          <Text style={headingStyles.taskText}>Driving Lessons</Text>
+        </View>
+        <View style={headingStyles.taskContainer}>
+          <Text style={headingStyles.taskText}>Marketing Seasons</Text>
         </View>
       </ScrollView>
     </ScrollView>
@@ -57,10 +76,75 @@ export default function Greeting() {
 
 const headingStyles = StyleSheet.create({
   container: {
-    backgroundColor: '#E8D1BA',
-    padding: 33,
+    backgroundColor: '#F7F0E8',
+    padding: 30,
+  },
+  header: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+  },
+  filterContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginTop: 20,
+    marginBottom: 35,
+  },
+  searchContainer: {
+    flexDirection: 'row',
+    borderRadius: 15,
+    width: 280,
+    backgroundColor: '#FBF9F7',
+    alignItems: 'center',
+  },
+  filterIcon: {
+    width: 50,
+    height: 50,
+
+  },
+  searchIcon: {
+    width: 30,
+    height: 30,
+    marginLeft: 10,
+  },
+  categoriesContainer: {
+    backgroundColor: '#FBF9F7',
+    padding: 10,
+    borderRadius: 15,
+    marginRight: 10,
+    width: 186,
+    height: 192,
+  },
+
+  catImage1: {
+    width: 120,
+    height: 115,
+    marginLeft: 35,
+  },
+  catImage2: {
+    width: 120,
+    height: 125,
+    marginLeft: 30,
+  },
+  categoryHeader: {
+    fontSize: 18,
+    color: 'black',
+  },
+  categoryText: {
+    fontSize: 13,
+    color: 'gray',
+  },
+
+  taskContainer: {
+    backgroundColor: '#FBF9F7',
+    width: 350,
+    height: 128,
+    padding: 15,
+    borderRadius: 15,
+    marginTop: 10,
+    borderWidth: 1,
+    borderColor: '#E8D1BA', 
+    justifyContent: 'center',
   },
 
   headingText: {
@@ -72,13 +156,15 @@ const headingStyles = StyleSheet.create({
     height: 50,
   },
   searchBar:{
-    borderWidth: 1,
-    borderColor: 'white',
     padding: 10,
-    width: 300,
-    marginLeft: 30,
+    width: 85,
     borderRadius: 15,
-    backgroundColor: 'white',
+    backgroundColor: '#FBF9F7',
     fontSize: 17
-  }
+  },
+  taskText: {
+    fontSize: 16,
+    color: 'black',
+  },
+
 });
